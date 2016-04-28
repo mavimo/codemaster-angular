@@ -1,0 +1,11 @@
+.card .card-content {
+  height: 300px;
+}
+.card .card-content p {
+  max-height: 260px;
+  overflow: hidden;
+}
+
+.container nav {
+  margin-bottom: 1em;
+}

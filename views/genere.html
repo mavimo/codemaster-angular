@@ -1,0 +1,36 @@
+<h1>{{ titolo }}</h1>
+
+<div class="container">
+  <nav >
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required ng-model="filtroTesto.original_title" class="amber">
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+
+  <div ng-if="!error" class="row">
+    <div class="col s4 m4" ng-repeat="movie in movies|filter:filtroTesto">
+      <div class="card">
+        <div class="card-image">
+          <img src="http://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}" />
+          <span class="card-title">{{ movie.original_title }}</span>
+        </div>
+        <div class="card-content">
+          <p>{{ movie.overview }}</p>
+        </div>
+        <div class="card-action">
+          <a href="#">See more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div ng-if="error">
+  Impossibile ottenre l'elenco dei film.
+</div>

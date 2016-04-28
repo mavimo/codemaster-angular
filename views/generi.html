@@ -1,0 +1,10 @@
+<h1>{{ titolo }}</h1>
+<ul ng-if="!error">
+  <li ng-repeat="gen in genres">
+    <a href="#/generi/{{ gen.id }}">{{ gen.name }}</a>
+  </li>
+</ul>
+
+<div ng-if="error">
+  Impossibile ottenre l'elenco dei generi.
+</div>
